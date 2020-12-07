@@ -1,0 +1,24 @@
+<h2>Add Car</h2>
+<%= link_to "All Cars", root_path %>
+
+<%= form_tag create_path do %>
+    <div>
+        <%= label_tag :year, "Year" %>
+        <%= number_field_tag :year %>
+    </div>
+    <div>
+        <%= label_tag :make, "Make" %>
+        <%= text_field_tag :make %>
+    <div>
+    <div>
+        <%= label_tag :model, "Model" %>
+        <%= text_field_tag :model %>
+    <div>
+    <div>
+        <%= label_tag :color, "Color" %>
+        <%= text_field_tag :color %>
+    </div>
+    <div>
+        <%= submit_tag "Submit" %>
+    </div>
+<% end %>

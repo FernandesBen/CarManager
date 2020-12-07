@@ -1,0 +1,26 @@
+<h2>Welcome to Car Manager</h2>
+<%= link_to "Add Car", new_path %>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @cars.each do |car| %>
+            <tr>
+                <td><%= car.id  %></td>
+                <td><%= car.year %></td>
+                <td><%= car.make %></td>
+                <td><%= car.model %></td>
+                <td><%= car.color %></td>
+                <td><%= link_to 'Delete', "delete/#{car.id}", :method => :delete  %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
