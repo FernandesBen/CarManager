@@ -1,7 +1,15 @@
 <h2>Welcome to Car Manager</h2>
 <%= link_to "Add Car", new_path %>
-
+<br>
+<br>
 <table>
+    <colgroup>
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 20%;">
+        <col span="1" style="width: 20%;">
+    <colgroup>
     <thead>
         <tr>
             <th>ID</th>
@@ -19,7 +27,8 @@
                 <td><%= car.make %></td>
                 <td><%= car.model %></td>
                 <td><%= car.color %></td>
-                <td><%= link_to 'Delete', "delete/#{car.id}", :method => :delete  %></td>
+                <td style="border: none"><%= link_to 'Update', "update/#{car.id}" %></td>
+                <td style="border: none"><%= link_to 'Delete', "delete/#{car.id}", :method => :delete  %></td>
             </tr>
         <% end %>
     </tbody>
