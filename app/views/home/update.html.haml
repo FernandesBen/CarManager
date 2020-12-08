@@ -1,0 +1,16 @@
+%h2= "Update Content"
+
+= form_tag "/update/#{@car.id}", method: :put do
+    %div
+        %label Year
+        %input{:name => 'year', :type => 'number',:value => @car.year}
+    %div
+        %label Make
+        %input{:name => 'make', :type => 'text',:value => @car.make}
+    %div
+        %label Model
+        %input{:name => 'model', :type => 'text',:value => @car.model}
+    %div
+        %label Color
+        %input{:name => 'color', :type => 'text',:value => @car.color}
+    = submit_tag "Update"
