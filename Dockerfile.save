@@ -1,9 +1,25 @@
-FROM ruby:2.6
-RUN apt-get update -qq && apt-get install -y ruby-nokogiri nodejs postgresql-client
+FROM ruby:2.6-alpine
+RUN apk add --no-cache --update \
+  build-base \
+  libxml2-dev \
+  libxslt-dev \
+  nodejs \
+  postgresql-dev \
+  && rm -rf /var/cache/apk/*RUN apk add --no-cache --update \
+    build-base \
+    linux-headers \
+    git \
+    postgresql-dev \
+    nodejs \
+    yarn \
+    tzdata \
+    graphviz \
+    gmp-dev
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle config build.nokogiri --use-system-libraries
+RUN libxml2-dev libxslt-dev 
 RUN bundle install
 COPY . /app
 
